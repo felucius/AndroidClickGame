@@ -19,8 +19,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".GameScreen"
+            android:name=".Screens.GameScreen"
             android:label="@string/title_activity_game_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Screens.CharacterScreen"
+            android:label="@string/title_activity_character_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Screens.ArmoryScreen"
+            android:label="@string/title_activity_armory_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Screens.CombatScreen"
+            android:label="@string/title_activity_combat_screen"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Screens.SettingsScreen"
+            android:label="@string/title_activity_settings_screen"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

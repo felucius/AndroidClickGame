@@ -3,4 +3,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_game_screen">GameScreen</string>
     <string name="btnGameScreen">Continue</string>
+    <string name="title_activity_character_screen">CharacterScreen</string>
+    <string name="title_activity_armory_screen">ArmoryScreen</string>
+    <string name="title_activity_combat_screen">CombatScreen</string>
+    <string name="title_activity_settings_screen">SettingsScreen</string>
 </resources>

@@ -1,27 +1,20 @@
-package maximedelange.mygame;
+package maximedelange.mygame.Screens;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import java.util.Timer;
-import java.util.TimerTask;
-
 import maximedelange.mygame.Domain.Player;
+import maximedelange.mygame.R;
 
 public class GameScreen extends AppCompatActivity {
 
     private Player playerstats;
+    private ImageButton btnGotoScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +24,12 @@ public class GameScreen extends AppCompatActivity {
         getUserName();
         playerSetupInformation();
         appSetupInformation();
+
+        // Game screens
+        gotoCharacter();
+        gotoArmory();
+        gotoCombat();
+        gotoSettings();
     }
 
     public void getUserName(){
@@ -68,5 +67,53 @@ public class GameScreen extends AppCompatActivity {
         armory.setText("armory");
         combat.setText("combat");
         settings.setText("settings");
+    }
+
+    // Go to Character screen
+    public void gotoCharacter(){
+        btnGotoScreen = (ImageButton)findViewById(R.id.btnCharacter);
+        btnGotoScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CharacterScreen.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    // Go to Armory screen
+    public void gotoArmory(){
+        btnGotoScreen = (ImageButton)findViewById(R.id.btnArmory);
+        btnGotoScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), ArmoryScreen.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    // Go to Combat screen
+    public void gotoCombat(){
+        btnGotoScreen = (ImageButton)findViewById(R.id.btnCombat);
+        btnGotoScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), CombatScreen.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    // Go to Settings screen
+    public void gotoSettings(){
+        btnGotoScreen = (ImageButton)findViewById(R.id.btnSettings);
+        btnGotoScreen.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), SettingsScreen.class);
+                startActivity(intent);
+            }
+        });
     }
 }
