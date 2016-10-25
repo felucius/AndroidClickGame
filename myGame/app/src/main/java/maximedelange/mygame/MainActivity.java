@@ -26,24 +26,11 @@ public class MainActivity extends AppCompatActivity {
     public void gotoGameScreen()
     {
         btnGoToActivity = (ImageButton) findViewById(R.id.btnStart);
-        btnGoToActivity.setOnClickListener(new View.OnClickListener()
-        {
+        btnGoToActivity.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
+            public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), GameScreen.class);
-                EditText name = (EditText)findViewById(R.id.inputName);
-                String newName = name.getText().toString();
-                if(name.getText().toString().equals("")){
-                    name.setText("Enter a name");
-                }
-                else if (name.getText().toString().equals("Enter a name")){
-                    name.setText("Enter a name");
-                }
-                else{
-                    intent.putExtra("name", newName);
-                    startActivity(intent);
-                }
+                startActivity(intent);
             }
         });
     }

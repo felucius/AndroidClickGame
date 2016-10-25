@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import maximedelange.mygame.Domain.Player;
@@ -21,8 +22,8 @@ public class GameScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
 
-        getUserName();
-        playerSetupInformation();
+        //getUserName();
+        //playerSetupInformation();
         appSetupInformation();
 
         // Game screens
@@ -30,29 +31,39 @@ public class GameScreen extends AppCompatActivity {
         gotoArmory();
         gotoCombat();
         gotoSettings();
-    }
 
-    public void getUserName(){
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        TextView displayName = (TextView)findViewById(R.id.lblUserName);
-        displayName.setTextSize(26);
-        displayName.setText(name);
+        // Retrieving info from character screen
+        collectCharacterData();
     }
 
     public void playerSetupInformation(){
-        playerstats = new Player("Test", 3, 1, 100, null);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+        playerstats = new Player(name, 3, 1, 100, null);
         // Create textview variables
         TextView levelShow = (TextView)findViewById(R.id.lblLevelShow);
         TextView level = (TextView)findViewById(R.id.lblLevel);
         TextView moneyShow = (TextView)findViewById(R.id.lblMoneyShow);
         TextView money = (TextView)findViewById(R.id.lblMoney);
+        TextView characterName = (TextView)findViewById(R.id.lblUserName);
 
         // Assign values to variables
-        levelShow.setText("level:");
-        level.setText(String.valueOf(playerstats.getLevel()));
-        moneyShow.setText("money:");
-        money.setText(String.valueOf(playerstats.getMoney()));
+        if(name == null){
+            levelShow.setText("level:");
+            level.setText("...");
+            moneyShow.setText("money:");
+            money.setText("...");
+            characterName.setTextSize(20);
+            characterName.setText("...");
+        }
+        else{
+            levelShow.setText("level:");
+            level.setText(String.valueOf(playerstats.getLevel()));
+            moneyShow.setText("money:");
+            money.setText(String.valueOf(playerstats.getMoney()));
+            characterName.setTextSize(20);
+            characterName.setText(name);
+        }
     }
 
     public void appSetupInformation(){
@@ -115,5 +126,13 @@ public class GameScreen extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    public void collectCharacterData(){
+        ImageView characterPicture = (ImageView)findViewById(R.id.gsCharacterPicture);
+        int image = getIntent().getIntExtra("characterPicture", R.mipmap.ic_launcher);
+        characterPicture.setImageResource(image);
+
+        playerSetupInformation();
     }
 }
