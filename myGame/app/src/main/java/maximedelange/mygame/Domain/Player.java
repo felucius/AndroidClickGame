@@ -13,14 +13,18 @@ public class Player {
     private int health;
     private int level = 1;
     private int money = 0;
+    private int attack;
+    private int defence;
     private ImageView sprite;
 
     // Constructor
-    public Player(String name, int health, int level, int money, ImageView sprite){
+    public Player(String name, ImageView sprite){
         this.name = name;
-        this.health = health;
-        this.level = level;
-        this.money = money;
+        this.health = 3;
+        this.level = 1;
+        this.money = 0;
+        this.attack = 1;
+        this.defence = 0;
         this.sprite = sprite;
     }
 
@@ -51,5 +55,21 @@ public class Player {
 
     public int getMoney(){
         return this.money;
+    }
+
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
+    public int getAttack(){
+        return this.attack;
+    }
+
+    public void setDefence(int defence){
+        this.defence = defence;
+    }
+
+    public int getDefence(){
+        return this.defence;
     }
 }

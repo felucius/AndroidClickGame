@@ -40,21 +40,13 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Button"
+        android:text="save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btnSave"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="35dp" />
-
-    <Switch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/switchCharacter"
-        android:layout_above="@+id/btnSave"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="11dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -65,4 +57,138 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="17dp"
         android:id="@+id/editName" />
+
+    <Button
+        android:text="l"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="75dp"
+        android:id="@+id/btnLeft"
+        android:layout_alignTop="@+id/characterPicture"
+        android:layout_toLeftOf="@+id/characterPicture"
+        android:layout_toStartOf="@+id/characterPicture" />
+
+    <Button
+        android:text="r"
+        android:layout_width="30dp"
+        android:layout_height="50dp"
+        android:id="@+id/btnRight"
+        android:layout_alignBaseline="@+id/btnLeft"
+        android:layout_alignBottom="@+id/btnLeft"
+        android:layout_toRightOf="@+id/characterPicture"
+        android:layout_toEndOf="@+id/characterPicture" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblchLevelShow"
+        android:layout_toRightOf="@+id/lblchLevelShow"
+        android:layout_toEndOf="@+id/lblchLevelShow"
+        android:layout_marginLeft="27dp"
+        android:layout_marginStart="27dp"
+        android:id="@+id/lblchLevel" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchLevelShow"
+        android:layout_toLeftOf="@+id/lblchLevel"
+        android:layout_toStartOf="@+id/lblchLevel"
+        android:id="@+id/lblchHealthShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchHealthShow"
+        android:layout_alignRight="@+id/lblchHealthShow"
+        android:layout_alignEnd="@+id/lblchHealthShow"
+        android:id="@+id/lblchAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchAttackShow"
+        android:layout_alignRight="@+id/lblchAttackShow"
+        android:layout_alignEnd="@+id/lblchAttackShow"
+        android:id="@+id/lblchDefenceShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchDefenceShow"
+        android:layout_alignLeft="@+id/lblchDefenceShow"
+        android:layout_alignStart="@+id/lblchDefenceShow"
+        android:id="@+id/lblchMoneyShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lblchAttackShow"
+        android:layout_alignLeft="@+id/lblchLevel"
+        android:layout_alignStart="@+id/lblchLevel"
+        android:id="@+id/lblchHealth" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchHealth"
+        android:layout_alignLeft="@+id/lblchHealth"
+        android:layout_alignStart="@+id/lblchHealth"
+        android:id="@+id/lblchAttack" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lblchMoneyShow"
+        android:layout_alignLeft="@+id/lblchAttack"
+        android:layout_alignStart="@+id/lblchAttack"
+        android:id="@+id/lblchDefence" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchDefence"
+        android:layout_alignLeft="@+id/lblchDefence"
+        android:layout_alignStart="@+id/lblchDefence"
+        android:id="@+id/lblchMoney" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblchLevelShow"
+        android:layout_alignBaseline="@+id/editName"
+        android:layout_alignBottom="@+id/editName"
+        android:layout_toLeftOf="@+id/lblSwitchCharacter"
+        android:layout_toStartOf="@+id/lblSwitchCharacter" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblchMoneyShow"
+        android:layout_alignLeft="@+id/lblchMoneyShow"
+        android:layout_alignStart="@+id/lblchMoneyShow"
+        android:id="@+id/lblchExperienceShow" />
+
+    <ProgressBar
+        android:id="@+id/pbExperience"
+        android:visibility="visible"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:max="100"
+        android:progress="0"
+        android:layout_height="30dp"
+        android:layout_width="100dp"
+        android:layout_below="@+id/lblchMoney"
+        android:layout_alignLeft="@+id/lblchMoney"
+        android:layout_alignStart="@+id/lblchMoney" />
 </RelativeLayout>

@@ -9,11 +9,14 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import java.io.FileReader;
+
 import maximedelange.mygame.Screens.GameScreen;
 
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton btnGoToActivity;
+    private FileReader reader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -7,7 +7,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import maximedelange.mygame.Domain.Player;
 import maximedelange.mygame.R;
@@ -16,13 +19,14 @@ public class GameScreen extends AppCompatActivity {
 
     private Player playerstats;
     private ImageButton btnGotoScreen;
+    private TextView hasUserName;
+    private String hasProfilePicture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
 
-        //getUserName();
         //playerSetupInformation();
         appSetupInformation();
 
@@ -39,28 +43,17 @@ public class GameScreen extends AppCompatActivity {
     public void playerSetupInformation(){
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
-        playerstats = new Player(name, 3, 1, 100, null);
+
+        playerstats = new Player(name, null);
         // Create textview variables
-        TextView levelShow = (TextView)findViewById(R.id.lblLevelShow);
-        TextView level = (TextView)findViewById(R.id.lblLevel);
-        TextView moneyShow = (TextView)findViewById(R.id.lblMoneyShow);
-        TextView money = (TextView)findViewById(R.id.lblMoney);
         TextView characterName = (TextView)findViewById(R.id.lblUserName);
 
         // Assign values to variables
         if(name == null){
-            levelShow.setText("level:");
-            level.setText("...");
-            moneyShow.setText("money:");
-            money.setText("...");
             characterName.setTextSize(20);
             characterName.setText("...");
         }
         else{
-            levelShow.setText("level:");
-            level.setText(String.valueOf(playerstats.getLevel()));
-            moneyShow.setText("money:");
-            money.setText(String.valueOf(playerstats.getMoney()));
             characterName.setTextSize(20);
             characterName.setText(name);
         }
@@ -82,11 +75,31 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Character screen
     public void gotoCharacter(){
+        hasUserName = (TextView)findViewById(R.id.lblUserName);
         btnGotoScreen = (ImageButton)findViewById(R.id.btnCharacter);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), CharacterScreen.class);
+                String hasName = hasUserName.getText().toString();
+
+                // PROBLEEM MET PROFIEL FOTO LADEN
+                Intent intent2 = getIntent();
+                hasProfilePicture = intent2.getStringExtra("profilePic");
+
+                if(hasProfilePicture != null){
+
+                    if(hasProfilePicture.equals("a")) {
+                        intent.putExtra("hasCharacterPicture", R.mipmap.character2);
+                    }
+                    else{
+                        intent.putExtra("hasCharacterPicture", R.mipmap.character1);
+                    }
+                }else{
+                    System.out.println("Profile picture is: " + hasProfilePicture);
+                }
+
+                intent.putExtra("hasName", hasName);
                 startActivity(intent);
             }
         });

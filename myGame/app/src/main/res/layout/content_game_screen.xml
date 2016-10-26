@@ -91,46 +91,6 @@
         android:layout_alignStart="@+id/lblSettings"
         android:id="@+id/lblArmory" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMoneyShow"
-        android:layout_above="@+id/btnArmory"
-        android:layout_toLeftOf="@+id/lblMoney"
-        android:layout_toStartOf="@+id/lblMoney"
-        android:layout_marginBottom="36dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblMoney"
-        android:layout_alignBaseline="@+id/lblMoneyShow"
-        android:layout_alignBottom="@+id/lblMoneyShow"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblLevel"
-        android:layout_above="@+id/lblMoney"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="14dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblLevelShow"
-        android:layout_alignBaseline="@+id/lblLevel"
-        android:layout_alignBottom="@+id/lblLevel"
-        android:layout_toLeftOf="@+id/lblLevel"
-        android:layout_toStartOf="@+id/lblLevel" />
-
     <ImageView
         android:layout_height="75dp"
         app:srcCompat="@mipmap/ic_launcher"
@@ -148,4 +108,5 @@
         android:layout_below="@+id/gsCharacterPicture"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
 </RelativeLayout>
