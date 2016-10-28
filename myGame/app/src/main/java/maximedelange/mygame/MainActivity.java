@@ -16,7 +16,6 @@ import maximedelange.mygame.Screens.GameScreen;
 public class MainActivity extends AppCompatActivity {
 
     private ImageButton btnGoToActivity;
-    private FileReader reader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

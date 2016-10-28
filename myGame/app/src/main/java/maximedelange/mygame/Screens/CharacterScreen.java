@@ -20,17 +20,22 @@ import maximedelange.mygame.R;
 
 public class CharacterScreen extends AppCompatActivity {
 
-    private boolean isSwitching;
-    private boolean isDisabled = true;
+    // GUI components variables
     private ImageView characterImage;
-    private Button btnSave;
     private EditText characterName;
     private Button leftChoice;
     private Button rightChoice;
-    private Player player;
-    TextView changeCharacter;
-    TextView characterText;
+    private Button btnSave;
+    private TextView changeCharacter;
+    private TextView characterText;
+
+    // Variables
+    private boolean isSwitching;
+    private boolean isDisabled = true;
     private String profilePictureValue;
+
+    // Class variables
+    private Player player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,7 @@ public class CharacterScreen extends AppCompatActivity {
         setupGameScreen();
         changeCharacter();
 
+        // Retrieving the information from the gamescreen
         Intent intent = getIntent();
         String hasOldName = intent.getStringExtra("hasName");
 
@@ -56,6 +62,7 @@ public class CharacterScreen extends AppCompatActivity {
         setupCharacterInformation(hasOldName);
     }
 
+    // Setting up the game screen such as choosing a character or a name
     public void setupGameScreen(){
         characterText = (TextView)findViewById(R.id.lblChooseCharacter);
         changeCharacter = (TextView)findViewById(R.id.lblSwitchCharacter);
@@ -63,6 +70,7 @@ public class CharacterScreen extends AppCompatActivity {
         changeCharacter.setText("player name:");
     }
 
+    // Change profile picture of the character
     public void changeCharacter(){
         leftChoice = (Button)findViewById(R.id.btnLeft);
         leftChoice.setOnClickListener(new View.OnClickListener() {
@@ -83,6 +91,8 @@ public class CharacterScreen extends AppCompatActivity {
         });
     }
 
+    // Setting up the character information such as GUI components and adding
+    // values to these components
     public void setupCharacterInformation(String name){
         player = new Player(name, null);
 
@@ -105,6 +115,7 @@ public class CharacterScreen extends AppCompatActivity {
         characterName = (EditText)findViewById(R.id.editName);
         characterText = (TextView)findViewById(R.id.lblChooseCharacter);
 
+        // If there is no name available
         if(name.equals("...")){
             levelShow.setVisibility(View.INVISIBLE);
             level.setVisibility(View.INVISIBLE);
@@ -118,9 +129,8 @@ public class CharacterScreen extends AppCompatActivity {
             health.setVisibility(View.INVISIBLE);
             progressExperience.setVisibility(View.INVISIBLE);
             experiencebarShow.setVisibility(View.INVISIBLE);
-
-
         }
+        // If there is a name available
         else {
             levelShow.setVisibility(View.VISIBLE);
             level.setVisibility(View.VISIBLE);
@@ -139,14 +149,11 @@ public class CharacterScreen extends AppCompatActivity {
             rightChoice.setVisibility(View.INVISIBLE);
             characterText.setVisibility(View.INVISIBLE);
 
+            // Retrieving the inforamtion from the gamescreen
             int image = getIntent().getIntExtra("hasCharacterPicture", R.mipmap.ic_launcher);
             characterPicture.setImageResource(image);
 
-            System.out.println("Image value putextra: " + image);
-            System.out.println("Image value char1:" + R.mipmap.character1);
-            System.out.println("Image value char2:" + R.mipmap.character2);
-            System.out.println("Image value ic_launch:" + R.mipmap.ic_launcher);
-
+            // Assigning values to the GUI components
             levelShow.setText("level:");
             level.setText(String.valueOf(player.getLevel()));
             moneyShow.setText("money:");
@@ -177,6 +184,7 @@ public class CharacterScreen extends AppCompatActivity {
         }
     }
 
+    // Saving the data when the player is done with making a character.
     public void saveInformation(){
         btnSave = (Button)findViewById(R.id.btnSave);
         if(isDisabled){

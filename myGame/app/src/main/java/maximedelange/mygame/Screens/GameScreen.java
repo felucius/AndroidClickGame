@@ -1,25 +1,17 @@
 package maximedelange.mygame.Screens;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
-import maximedelange.mygame.Domain.Player;
 import maximedelange.mygame.R;
 
 public class GameScreen extends AppCompatActivity {
 
-    private Player playerstats;
-    private ImageButton btnGotoScreen;
-    private TextView hasUserName;
     private String hasProfilePicture;
 
     @Override
@@ -37,26 +29,7 @@ public class GameScreen extends AppCompatActivity {
         gotoSettings();
 
         // Retrieving info from character screen
-        collectCharacterData();
-    }
-
-    public void playerSetupInformation(){
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-
-        playerstats = new Player(name, null);
-        // Create textview variables
-        TextView characterName = (TextView)findViewById(R.id.lblUserName);
-
-        // Assign values to variables
-        if(name == null){
-            characterName.setTextSize(20);
-            characterName.setText("...");
-        }
-        else{
-            characterName.setTextSize(20);
-            characterName.setText(name);
-        }
+        setupPlayerInformation();
     }
 
     public void appSetupInformation(){
@@ -75,18 +48,21 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Character screen
     public void gotoCharacter(){
-        hasUserName = (TextView)findViewById(R.id.lblUserName);
-        btnGotoScreen = (ImageButton)findViewById(R.id.btnCharacter);
+        final TextView hasUserName;hasUserName = (TextView)findViewById(R.id.lblUserName);
+        ImageButton btnGotoScreen = (ImageButton)findViewById(R.id.btnCharacter);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Making a new intent. Intent goes to the character screen
                 Intent intent = new Intent(v.getContext(), CharacterScreen.class);
                 String hasName = hasUserName.getText().toString();
 
-                // PROBLEEM MET PROFIEL FOTO LADEN
+                // Retrieving information from character screen
                 Intent intent2 = getIntent();
                 hasProfilePicture = intent2.getStringExtra("profilePic");
 
+                // If there is a profile picture available, then the correct profile picture
+                // is being stored and send to the character screen.
                 if(hasProfilePicture != null){
 
                     if(hasProfilePicture.equals("a")) {
@@ -99,7 +75,9 @@ public class GameScreen extends AppCompatActivity {
                     System.out.println("Profile picture is: " + hasProfilePicture);
                 }
 
+                // Pass the name value to the character screen
                 intent.putExtra("hasName", hasName);
+                // Starting the activity
                 startActivity(intent);
             }
         });
@@ -107,7 +85,7 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Armory screen
     public void gotoArmory(){
-        btnGotoScreen = (ImageButton)findViewById(R.id.btnArmory);
+        ImageButton btnGotoScreen = (ImageButton)findViewById(R.id.btnArmory);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +97,7 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Combat screen
     public void gotoCombat(){
-        btnGotoScreen = (ImageButton)findViewById(R.id.btnCombat);
+        ImageButton btnGotoScreen = (ImageButton)findViewById(R.id.btnCombat);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +109,7 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Settings screen
     public void gotoSettings(){
-        btnGotoScreen = (ImageButton)findViewById(R.id.btnSettings);
+        ImageButton btnGotoScreen = (ImageButton)findViewById(R.id.btnSettings);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -141,11 +119,28 @@ public class GameScreen extends AppCompatActivity {
         });
     }
 
-    public void collectCharacterData(){
+    // Retrieving the data for the character. It retrieves the picture from the character
+    // screen and it sets up the player information, such as name.
+    public void setupPlayerInformation(){
         ImageView characterPicture = (ImageView)findViewById(R.id.gsCharacterPicture);
         int image = getIntent().getIntExtra("characterPicture", R.mipmap.ic_launcher);
         characterPicture.setImageResource(image);
 
-        playerSetupInformation();
+        // Retrieving the content from the character screen
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("name");
+
+        // Create textview variables
+        TextView characterName = (TextView)findViewById(R.id.lblUserName);
+
+        // Assign values to variables
+        if(name == null){
+            characterName.setTextSize(20);
+            characterName.setText("...");
+        }
+        else{
+            characterName.setTextSize(20);
+            characterName.setText(name);
+        }
     }
 }

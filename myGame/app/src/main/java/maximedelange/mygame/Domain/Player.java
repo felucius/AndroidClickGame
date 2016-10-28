@@ -19,6 +19,7 @@ public class Player {
 
     // Constructor
     public Player(String name, ImageView sprite){
+        // Initializing a new player with static values
         this.name = name;
         this.health = 3;
         this.level = 1;
