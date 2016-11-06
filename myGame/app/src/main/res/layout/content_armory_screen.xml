@@ -13,4 +13,121 @@
     tools:context="maximedelange.mygame.Screens.ArmoryScreen"
     tools:showIn="@layout/activity_armory_screen">
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblArmorShow"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblDefenceShow"
+        android:layout_alignBaseline="@+id/lblArmorShow"
+        android:layout_alignBottom="@+id/lblArmorShow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/asShield1"
+        android:layout_alignStart="@+id/asShield1" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/asCharacterPicture"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/asSwordlvl1"
+        android:layout_below="@+id/lblAttackShow"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/asSwordlvl1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/asSwordlvl2" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/asSwordlvl3"
+        android:layout_below="@+id/asSwordlvl2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/lblArmorShow"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/asArmor1" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/asArmor1"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/asArmor2" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/asArmor2"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/asArmor3" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/lblDefenceShow"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/asShield1" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/asShield1"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/asShield2" />
+
+    <ImageView
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_below="@+id/asShield2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/asShield3" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblAttackShow"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/asSwordlvl1"
+        android:layout_alignEnd="@+id/asSwordlvl1" />
+
 </RelativeLayout>
