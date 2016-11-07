@@ -15,6 +15,8 @@ public class Player {
     private int money = 0;
     private int attack;
     private int defence;
+    private int armor;
+    private int amountOfUpgrades;
     private ImageView sprite;
 
     // Constructor
@@ -26,6 +28,8 @@ public class Player {
         this.money = 0;
         this.attack = 1;
         this.defence = 0;
+        this.amountOfUpgrades = 0;
+        this.armor = 0;
         this.sprite = sprite;
     }
 
@@ -72,5 +76,21 @@ public class Player {
 
     public int getDefence(){
         return this.defence;
+    }
+
+    public void setUpgrades(int upgrades){
+        this.amountOfUpgrades = upgrades;
+    }
+
+    public int getAmountOfUpgrades(){
+        return this.amountOfUpgrades;
+    }
+
+    public void setArmor(int armor){
+        this.armor = armor;
+    }
+
+    public int getArmor(){
+        return this.armor;
     }
 }
