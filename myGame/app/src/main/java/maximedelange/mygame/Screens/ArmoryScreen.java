@@ -117,7 +117,7 @@ public class ArmoryScreen extends AppCompatActivity {
         Intent retrieveFrom = getIntent();
         hasName = retrieveFrom.getStringExtra("name");
         // Create player object with created name
-        player = new Player(hasName, null);
+        player = new Player(hasName, R.mipmap.ic_launcher);
 
         loadStatisticsGuiComponents();
 
@@ -126,7 +126,7 @@ public class ArmoryScreen extends AppCompatActivity {
 
         // If there is a profile picture available, then the correct profile picture
         // is being stored and send to the character screen.
-        if(hasPicture != null){
+        if(hasPicture != String.valueOf(0)){ // DOUBLE CHECK IF WORKS BECAUSE OF STRING
             if(hasPicture.equals("a")) {
                 characterPicture.setImageResource(R.mipmap.character2);
                 checkUpgradesStatus();
@@ -149,7 +149,7 @@ public class ArmoryScreen extends AppCompatActivity {
         loadItemPictures();
 
         if(hasPicture.equals("a")){
-            player = new Player(hasName, null);
+            player = new Player(hasName, 0);
             if(player.getAmountOfUpgrades() > 1){
 
             }
@@ -382,7 +382,7 @@ public class ArmoryScreen extends AppCompatActivity {
         // Retrieving name data from different intent
         Intent retrieveFrom = getIntent();
         hasName = retrieveFrom.getStringExtra("name");
-        player = new Player(hasName, null);
+        player = new Player(hasName, 0);
         btnPurchaseUpgrade = (Button)findViewById(R.id.btnPurchase);
         btnPurchaseUpgrade.setText("buy");
         btnPurchaseUpgrade.setOnClickListener(new View.OnClickListener() {

@@ -17,10 +17,11 @@ public class Player {
     private int defence;
     private int armor;
     private int amountOfUpgrades;
-    private ImageView sprite;
+    private int sprite;
+    private int experience;
 
     // Constructor
-    public Player(String name, ImageView sprite){
+    public Player(String name, int sprite){
         // Initializing a new player with static values
         this.name = name;
         this.health = 3;
@@ -31,6 +32,7 @@ public class Player {
         this.amountOfUpgrades = 0;
         this.armor = 0;
         this.sprite = sprite;
+        this.experience = 0;
     }
 
     // Methods
@@ -46,11 +48,11 @@ public class Player {
         return this.health;
     }
 
-    public void setSprite(ImageView sprite){
+    public void setSprite(int sprite){
         this.sprite = sprite;
     }
 
-    public ImageView getSprite(){
+    public int getSprite(){
         return this.sprite;
     }
 
@@ -92,5 +94,13 @@ public class Player {
 
     public int getArmor(){
         return this.armor;
+    }
+
+    public void setExperience(int experience){
+        this.experience = experience;
+    }
+
+    public int getExperience(){
+        return this.experience;
     }
 }

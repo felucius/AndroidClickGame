@@ -3,7 +3,9 @@ package maximedelange.mygame.Screens;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -35,6 +37,12 @@ public class GameScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
 
+        /*
+        android.support.v7.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.setHomeButtonEnabled(true);
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        */
+
         //playerSetupInformation();
         appSetupInformation();
 
@@ -64,7 +72,7 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Character screen
     public void gotoCharacter(){
-        final TextView hasUserName;hasUserName = (TextView)findViewById(R.id.lblUserName);
+        final TextView hasUserName = (TextView)findViewById(R.id.lblUserName);
         ImageButton btnGotoScreen = (ImageButton)findViewById(R.id.btnCharacter);
         btnGotoScreen.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -127,6 +135,8 @@ public class GameScreen extends AppCompatActivity {
 
     // Go to Combat screen
     public void gotoCombat(){
+        retrieveFrom = getIntent();
+        hasProfilePicture = retrieveFrom.getStringExtra("profilePic");
         btnGotoScreen = (ImageButton)findViewById(R.id.btnCombat);
         passTo = getIntent();
         name = passTo.getStringExtra("name");
@@ -136,8 +146,16 @@ public class GameScreen extends AppCompatActivity {
             btnGotoScreen.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), CombatScreen.class);
-                    startActivity(intent);
+                    passTo = new Intent(v.getContext(), CombatScreen.class);
+                    passTo.putExtra("csName", name);
+                    if(hasProfilePicture.equals("a")) {
+                        passTo.putExtra("csPicture", R.mipmap.character2);
+                    }
+                    else{
+                        passTo.putExtra("csPicture", R.mipmap.character1);
+                    }
+
+                    startActivity(passTo);
                 }
             });
         }
@@ -205,5 +223,18 @@ public class GameScreen extends AppCompatActivity {
             characterName.setTextSize(20);
             characterName.setText(name);
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case android.R.id.home:
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
     }
 }

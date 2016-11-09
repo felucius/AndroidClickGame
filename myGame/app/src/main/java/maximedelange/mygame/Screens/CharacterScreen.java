@@ -94,7 +94,7 @@ public class CharacterScreen extends AppCompatActivity {
     // Setting up the character information such as GUI components and adding
     // values to these components
     public void setupCharacterInformation(String name){
-        player = new Player(name, null);
+        player = new Player(name, 0);
 
         // Create textview variables
         TextView levelShow = (TextView)findViewById(R.id.lblchLevelShow);

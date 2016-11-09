@@ -13,4 +13,204 @@
     tools:context="maximedelange.mygame.Screens.CombatScreen"
     tools:showIn="@layout/activity_combat_screen">
 
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyName"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_alignStart="@+id/imageView2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcsCharHealthShow"
+        android:layout_alignRight="@+id/lblcsCharHealthShow"
+        android:layout_alignEnd="@+id/lblcsCharHealthShow"
+        android:id="@+id/lblcsCharAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyArmorShow"
+        android:layout_alignBaseline="@+id/lblcsCharArmorShow"
+        android:layout_alignBottom="@+id/lblcsCharArmorShow"
+        android:layout_alignRight="@+id/lblcsEnemyName"
+        android:layout_alignEnd="@+id/lblcsEnemyName" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lblcsEnemyArmorShow"
+        android:layout_alignRight="@+id/lblcsEnemyArmorShow"
+        android:layout_alignEnd="@+id/lblcsEnemyArmorShow"
+        android:id="@+id/lblcsEnemyAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharArmorShow"
+        android:layout_below="@+id/lblcsCharAttackShow"
+        android:layout_alignLeft="@+id/lblcsCharAttackShow"
+        android:layout_alignStart="@+id/lblcsCharAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyHealthShow"
+        android:layout_above="@+id/lblcsEnemyAttackShow"
+        android:layout_alignLeft="@+id/lblcsEnemyAttackShow"
+        android:layout_alignStart="@+id/lblcsEnemyAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/lblcsEnemyHealthShow"
+        android:layout_toRightOf="@+id/lblcsEnemyAttackShow"
+        android:layout_toEndOf="@+id/lblcsEnemyAttackShow"
+        android:id="@+id/lblcsEnemyHealth" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcsEnemyHealthShow"
+        android:layout_alignRight="@+id/lblcsEnemyHealth"
+        android:layout_alignEnd="@+id/lblcsEnemyHealth"
+        android:id="@+id/lblcsEnemyAttack" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lblcsEnemyArmorShow"
+        android:layout_toRightOf="@+id/lblcsEnemyArmorShow"
+        android:layout_toEndOf="@+id/lblcsEnemyArmorShow"
+        android:id="@+id/lblcsEnemyArmor" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcsCharAttackShow"
+        android:layout_alignRight="@+id/lblcsCharAttack"
+        android:layout_alignEnd="@+id/lblcsCharAttack"
+        android:id="@+id/lblcsCharArmor" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/lblcsCharDefence"
+        android:layout_alignLeft="@+id/lblcsEnemyArmorShow"
+        android:layout_alignStart="@+id/lblcsEnemyArmorShow"
+        android:id="@+id/lblcsEnemyDefenceShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblcsEnemyArmor"
+        android:layout_toRightOf="@+id/lblcsEnemyArmorShow"
+        android:layout_toEndOf="@+id/lblcsEnemyArmorShow"
+        android:id="@+id/lblcsEnemyDefence" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharDefenceShow"
+        android:layout_below="@+id/lblcsCharArmorShow"
+        android:layout_alignLeft="@+id/lblcsCharArmorShow"
+        android:layout_alignStart="@+id/lblcsCharArmorShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharAttack"
+        android:layout_below="@+id/lblcsCharHealth"
+        android:layout_alignLeft="@+id/lblcsCharHealth"
+        android:layout_alignStart="@+id/lblcsCharHealth" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharDefence"
+        android:layout_below="@+id/lblcsCharArmor"
+        android:layout_alignLeft="@+id/lblcsCharArmor"
+        android:layout_alignStart="@+id/lblcsCharArmor" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="82dp"
+        android:id="@+id/csCharPicture"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:id="@+id/imageView2"
+        android:layout_alignTop="@+id/csCharPicture"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="44dp"
+        android:id="@+id/btnAttack" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:id="@+id/lblcsCharHealthShow"
+        android:layout_below="@+id/lblcsPlayerName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsPlayerName"
+        android:layout_below="@+id/csCharPicture"
+        android:layout_toLeftOf="@+id/btnAttack"
+        android:layout_toStartOf="@+id/btnAttack"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharHealth"
+        android:layout_alignBaseline="@+id/lblcsCharHealthShow"
+        android:layout_alignBottom="@+id/lblcsCharHealthShow"
+        android:layout_toRightOf="@+id/lblcsCharAttackShow"
+        android:layout_toEndOf="@+id/lblcsCharAttackShow"
+        android:layout_marginLeft="26dp"
+        android:layout_marginStart="26dp" />
+
 </RelativeLayout>

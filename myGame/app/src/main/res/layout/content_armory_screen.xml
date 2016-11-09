@@ -204,12 +204,16 @@
         android:layout_alignEnd="@+id/lblAttackShow" />
 
     <Button
-        android:layout_width="40dp"
-        android:layout_height="wrap_content"
+        android:layout_width="50dp"
+        android:layout_height="20dp"
         android:id="@+id/btnPurchase"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="?attr/colorButtonNormal"
+        android:layout_marginTop="13dp"
         android:layout_below="@+id/lblNewDefence"
-        android:layout_toRightOf="@+id/asCharacterPicture"
         android:layout_alignRight="@+id/lblNewDefence"
-        android:layout_alignEnd="@+id/lblNewDefence" />
+        android:layout_alignEnd="@+id/lblNewDefence"
+        android:layout_alignLeft="@+id/lblDefenceShow"
+        android:layout_alignStart="@+id/lblDefenceShow" />
 
 </RelativeLayout>
