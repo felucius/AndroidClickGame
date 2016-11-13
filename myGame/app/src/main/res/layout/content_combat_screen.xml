@@ -17,17 +17,6 @@
         android:text="TextView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:id="@+id/lblcsEnemyName"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginStart="20dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_below="@+id/lblcsCharHealthShow"
         android:layout_alignRight="@+id/lblcsCharHealthShow"
         android:layout_alignEnd="@+id/lblcsCharHealthShow"
@@ -35,26 +24,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblcsEnemyArmorShow"
-        android:layout_alignBaseline="@+id/lblcsCharArmorShow"
-        android:layout_alignBottom="@+id/lblcsCharArmorShow"
-        android:layout_alignRight="@+id/lblcsEnemyName"
-        android:layout_alignEnd="@+id/lblcsEnemyName" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/lblcsEnemyArmorShow"
-        android:layout_alignRight="@+id/lblcsEnemyArmorShow"
-        android:layout_alignEnd="@+id/lblcsEnemyArmorShow"
-        android:id="@+id/lblcsEnemyAttackShow" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/lblcsCharArmorShow"
         android:layout_below="@+id/lblcsCharAttackShow"
@@ -63,25 +33,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblcsEnemyHealthShow"
-        android:layout_above="@+id/lblcsEnemyAttackShow"
-        android:layout_alignLeft="@+id/lblcsEnemyAttackShow"
-        android:layout_alignStart="@+id/lblcsEnemyAttackShow" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/lblcsEnemyHealthShow"
-        android:layout_toRightOf="@+id/lblcsEnemyAttackShow"
-        android:layout_toEndOf="@+id/lblcsEnemyAttackShow"
-        android:id="@+id/lblcsEnemyHealth" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblcsEnemyHealthShow"
         android:layout_alignRight="@+id/lblcsEnemyHealth"
@@ -90,16 +42,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/lblcsEnemyArmorShow"
-        android:layout_toRightOf="@+id/lblcsEnemyArmorShow"
-        android:layout_toEndOf="@+id/lblcsEnemyArmorShow"
-        android:id="@+id/lblcsEnemyArmor" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/lblcsCharAttackShow"
         android:layout_alignRight="@+id/lblcsCharAttack"
@@ -108,7 +51,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/lblcsCharDefence"
         android:layout_alignLeft="@+id/lblcsEnemyArmorShow"
@@ -117,16 +60,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblcsEnemyArmor"
-        android:layout_toRightOf="@+id/lblcsEnemyArmorShow"
-        android:layout_toEndOf="@+id/lblcsEnemyArmorShow"
-        android:id="@+id/lblcsEnemyDefence" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/lblcsCharDefenceShow"
         android:layout_below="@+id/lblcsCharArmorShow"
@@ -135,25 +69,16 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:id="@+id/lblcsCharAttack"
         android:layout_below="@+id/lblcsCharHealth"
         android:layout_alignLeft="@+id/lblcsCharHealth"
         android:layout_alignStart="@+id/lblcsCharHealth" />
 
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/lblcsCharDefence"
-        android:layout_below="@+id/lblcsCharArmor"
-        android:layout_alignLeft="@+id/lblcsCharArmor"
-        android:layout_alignStart="@+id/lblcsCharArmor" />
-
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_marginTop="82dp"
         android:id="@+id/csCharPicture"
@@ -162,10 +87,10 @@
         android:layout_alignParentStart="true" />
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
         app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/imageView2"
+        android:id="@+id/csEnemyPicture"
         android:layout_alignTop="@+id/csCharPicture"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
@@ -180,7 +105,7 @@
 
     <TextView
         android:text="TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="19dp"
         android:id="@+id/lblcsCharHealthShow"
@@ -194,17 +119,6 @@
         android:text="TextView"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
-        android:id="@+id/lblcsPlayerName"
-        android:layout_below="@+id/csCharPicture"
-        android:layout_toLeftOf="@+id/btnAttack"
-        android:layout_toStartOf="@+id/btnAttack"
-        android:layout_marginRight="25dp"
-        android:layout_marginEnd="25dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/lblcsCharHealth"
         android:layout_alignBaseline="@+id/lblcsCharHealthShow"
         android:layout_alignBottom="@+id/lblcsCharHealthShow"
@@ -212,5 +126,90 @@
         android:layout_toEndOf="@+id/lblcsCharAttackShow"
         android:layout_marginLeft="26dp"
         android:layout_marginStart="26dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyHealth"
+        android:layout_above="@+id/lblcsEnemyAttack"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyArmor"
+        android:layout_below="@+id/lblcsEnemyAttack"
+        android:layout_alignLeft="@+id/lblcsEnemyAttack"
+        android:layout_alignStart="@+id/lblcsEnemyAttack" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyDefence"
+        android:layout_below="@+id/lblcsEnemyArmor"
+        android:layout_alignLeft="@+id/lblcsEnemyArmor"
+        android:layout_alignStart="@+id/lblcsEnemyArmor" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsCharDefence"
+        android:layout_below="@+id/lblcsCharArmor"
+        android:layout_alignLeft="@+id/lblcsCharArmor"
+        android:layout_alignStart="@+id/lblcsCharArmor" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyAttackShow"
+        android:layout_above="@+id/lblcsEnemyArmorShow"
+        android:layout_alignLeft="@+id/lblcsEnemyHealthShow"
+        android:layout_alignStart="@+id/lblcsEnemyHealthShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyHealthShow"
+        android:layout_above="@+id/lblcsEnemyAttackShow"
+        android:layout_alignLeft="@+id/csEnemyPicture"
+        android:layout_alignStart="@+id/csEnemyPicture"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyArmorShow"
+        android:layout_above="@+id/lblcsEnemyDefenceShow"
+        android:layout_alignLeft="@+id/lblcsEnemyAttackShow"
+        android:layout_alignStart="@+id/lblcsEnemyAttackShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsPlayerName"
+        android:layout_below="@+id/csCharPicture"
+        android:layout_alignLeft="@+id/lblcsCharHealthShow"
+        android:layout_alignStart="@+id/lblcsCharHealthShow" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblcsEnemyName"
+        android:layout_below="@+id/csEnemyPicture"
+        android:layout_alignLeft="@+id/lblcsEnemyHealthShow"
+        android:layout_alignStart="@+id/lblcsEnemyHealthShow" />
 
 </RelativeLayout>

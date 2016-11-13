@@ -11,17 +11,19 @@ public class Enemy {
     // Fields
     private String name;
     private int health;
+    private int attack;
     private int defence;
     private int armor;
     private int sprite;
 
     // Constructor
-    public Enemy(String name, int sprite){
+    public Enemy(String name, int attack, int health, int defence, int armor, int sprite){
         this.name = name;
         this.sprite = sprite;
-        this.health = 1;
-        this.defence = 0;
-        this.armor = 0;
+        this.attack = attack;
+        this.health = health;
+        this.defence = defence;
+        this.armor = armor;
     }
 
     // Methods
@@ -63,5 +65,13 @@ public class Enemy {
 
     public int getSprite(){
         return this.sprite;
+    }
+
+    public void setAttack(int attack){
+        this.attack = attack;
+    }
+
+    public int getAttack(){
+        return this.attack;
     }
 }
